@@ -263,11 +263,11 @@
             <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
             <div class="stats">
                 <div class="stat">
-                    <div class="stat-num">1</div>
+                    <div class="stat-num">12</div>
                     <div class="stat-label">精选文章</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">1</div>
+                    <div class="stat-num">4</div>
                     <div class="stat-label">信息源</div>
                 </div>
                 <div class="stat">
@@ -281,12 +281,114 @@
 <h2 class="category-title">🛠️ Builder 视角</h2>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://example.com" target="_blank" rel="noopener">Test Article</a></div>
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything" target="_blank" rel="noopener">Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager</a></div>
 <span class="article-stars">⭐⭐⭐⭐⭐</span>
 </div>
-<div class="article-source">📍 Test</div>
-<div class="article-summary">AI test summary</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Try this in your project!</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章揭示了一种通过 Prompt Injection 攻击 Cline 的 GitHub 仓库，利用 AI Issue Triager 执行任意命令，并最终通过 Cache Poisoning 窃取 NPM 发布 Secret 的复杂攻击链。这展示了 AI 安全在软件供应链中的严峻挑战。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, this is a clever attack chain! 🤯 Key takeaway: AI tools in CI/CD are powerful but need serious security hardening. You can't just trust prompts. Check your AI action configurations and secrets management – are they isolated enough? Try to implement stricter input validation and least privilege principles for any AI-driven automation.</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything" target="_blank" rel="noopener">Agentic manual testing</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章探讨了 Agentic Engineering 的核心——代码执行能力，并强调了自动化测试的局限性。作者 Simon Willison 提出，即使代码通过了自动化测试，也需要人工验证，并分享了让 AI Agent 进行“人工”测试的实用技巧，例如使用 `python -c` 来验证代码。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> AI Agent 写代码能执行是关键，但别忘了 manual testing！即使 unit tests pass，也可能漏掉 edge cases。试试让 Agent 用 `python -c` 跑些 tricky inputs，或者自己上手 check 一下 UI/UX，这能帮你发现自动化测不出的问题。关键是：验证！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/cursor-third-era" target="_blank" rel="noopener">Cursor's Third Era: Cloud Agents</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">Cursor 宣布进入“软件开发的第三时代”，其 Cloud Agents 功能已超越其 VSCode fork 的 IDE 用例。这标志着 Agent Lab 的战略转型，并可能对未来的开发模式产生深远影响。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Swyx 这篇文章讲 Cursor 的 Cloud Agents 成为主打，意味着 IDE 正在进化成 Agent。这对我们做 AI product 的是重要信号。关键是，你有没有想过你的产品怎么成为开发者 workflow 中的 Agent？试试从“辅助”到“自主”的角度思考。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/5/chardet/#atom-everything" target="_blank" rel="noopener">Can coding agents relicense open source through a “clean room” implementation of code?</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章探讨了 AI coding agents 如何通过类似“clean room”的实现方式重写开源代码，可能引发新的许可问题。文中以 chardet 库的 MIT 许可重写为例，引出了原作者对 LGPL 协议的质疑，揭示了潜在的法律和伦理挑战。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> This is super interesting! 🤖 The chardet case highlights a critical legal gray area for AI-generated code. For builders, it's a wake-up call: understand the licensing implications of using AI tools for code generation, especially for open-source projects. You might need to audit or even re-implement to ensure compliance. Key takeaway: AI can rewrite, but licensing rights are complex. Try to stay ahead of this evolving legal landscape.</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/reasoning-models-chain-of-thought-controllability" target="_blank" rel="noopener">Reasoning models struggle to control their chains of thought, and that’s good</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 的新研究 CoT-Control 发现，目前的 reasoning models 在控制其 thought chains 方面存在困难。这反而突显了 monitorability 作为 AI safety safeguard 的重要性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hey, 看到 OpenAI 这篇关于 CoT-Control 的研究了。关键 takeaway 是：模型控制不了自己的 thought process, 这反而是好事，说明 monitorability 还是 AI safety 的重要抓手。你可以试试在你的模型评估里，多关注一下它的 reasoning path 是否可控，而不是只看最终结果。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/ai-education-opportunity" target="_blank" rel="noopener">Ensuring AI use in education leads to opportunity</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 发布了新的工具、认证和衡量资源，旨在帮助学校和大学弥合 AI 能力差距，扩大教育机会。这篇内容侧重于 AI 在教育领域的应用和赋能。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个挺有意思的，OpenAI 在教育领域发力了。关键是看这些新工具和认证怎么落地，能不能真的帮到学生和老师提升 AI 技能。你可以关注一下他们具体提供了哪些可用的 resources，以及学校如何采纳。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.metacareers.com/life/how-a-non-traditional-background-led-to-cutting-edge-xr-tech" target="_blank" rel="noopener">How a non-traditional background led to cutting-edge XR tech</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">文章讲述了非传统背景如何助力前沿 XR 技术发展。Meta Research 的研究人员分享了他们跨学科的经验，强调了不同视角对创新 XR 解决方案的重要性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Interesting read! 关键是跨界思维能带来 unexpected insights. 你可以想想你的 team 有没有可以引入不同背景 talent 的机会，或者鼓励大家多 cross-pollinate ideas. 试试从非 tech angle 思考你的 XR problem?</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/ai-dataset-animation-drawings/" target="_blank" rel="noopener">A new, unique AI dataset for animating amateur drawings</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 发布了一个新的、独特的 AI 数据集，专门用于动画化业余用户的绘画。这个数据集旨在解决现有动画数据集的局限性，为AI驱动的动画创作提供新思路。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个新数据集听起来很酷！对于想做 UGC 动画产品的朋友，关键是思考如何让用户轻松上传他们的草图，AI 就能自动生成动画。试试看能否集成到现有工具里，让创作者的门槛更低。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://engineering.fb.com/2023/04/06/open-source/buck2-open-source-large-scale-build-system/" target="_blank" rel="noopener">Build faster with Buck2: Our open source build system</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 开源了 Buck2，一个旨在加速构建过程的系统。它提供了更快的构建速度和更好的可扩展性，特别适合大型项目。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Meta 开源 Buck2 啦！如果你在做大型项目，构建速度是个痛点，这绝对值得研究。试试看它能不能帮你提速，关键是看它在你的项目里表现如何。Build faster, ship sooner!</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/5/how-generational-differences-affect-consumer-attitudes-towards-ads/" target="_blank" rel="noopener">How generational differences affect consumer attitudes towards ads</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 与 CrowdDNA 合作进行了一项研究，旨在了解不同社交媒体平台上用户对广告的态度，特别是关注代际差异如何影响这些态度。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 了解不同代际对 ads 的态度，这对于我们做产品优化挺有参考价值的。关键是，你的产品目标用户是哪个 age group？你可以先做个小调研，看看你的核心用户群对哪些 platform ads 反应更积极，然后调整你的 ad strategy。试试看！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/every-tree-counts-large-scale-mapping-of-canopy-height-at-the-resolution-of-individual-trees/" target="_blank" rel="noopener">Every tree counts</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 正在开发技术以减少其碳足迹，并致力于到 2030 年实现净零排放。他们将这些技术开源。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Cool initiative! 关键是 Meta 正在把这些 carbon mitigation tech 开源。你可以去看看他们分享了哪些，说不定能给你做 AI project 带来灵感，或者直接用上。试试关注一下 Meta Research 的 repo 吧！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://about.fb.com/news/2023/04/how-the-metaverse-can-transform-education/" target="_blank" rel="noopener">How the metaverse can transform education</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 探讨了元宇宙如何变革教育，强调沉浸式学习体验和协作工具的潜力，但文章内容缺失，无法深入评估。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 标题听起来挺有意思的，元宇宙在教育上的应用。但光看标题和来源，我不知道具体能落地什么。关键是，这篇文章有没有讲清楚 'how'？不然光是概念，对我们 Builder 来说，落地性不强。你可以去看看文章里有没有具体的 use cases 或技术实现思路。</div>
 </div>
 </section>
 
