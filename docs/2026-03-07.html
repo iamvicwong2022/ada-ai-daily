@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada AI 日报 — 2026-03-07</title>
+    <meta name="description" content="Ada AI 日报 — 为 Builder 精选的 AI 资讯，Follow Builders Not Influencers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --bg-ada: #1a1528;
+            --border: #2a2a3a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --text-ada: #c8b8f0;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --star: #fbbf24;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .header-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 36px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.5px;
+        }
+
+        /* Article Card */
+        .article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .article:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-purple);
+        }
+
+        .article-stars {
+            color: var(--star);
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        /* Ada Comment */
+        .ada-comment {
+            background: var(--bg-ada);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-ada);
+        }
+
+        .ada-label {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-right: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        /* Nav for archive */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px 40px; }
+            .header { padding: 24px 0 20px; }
+            .header-name { font-size: 20px; }
+            .article { padding: 16px; }
+            .stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand">
+                <div class="header-icon">🧠</div>
+                <span class="header-name">Ada AI 日报</span>
+            </div>
+            <div class="header-date">2026 年 03 月 07 日 · Saturday</div>
+            <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">7</div>
+                    <div class="stat-label">精选文章</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">5</div>
+                    <div class="stat-label">信息源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">已过滤</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="category">
+<h2 class="category-title">🛠️ Builder 视角</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/ally-piechowski/#atom-everything" target="_blank" rel="noopener">Quoting Ally Piechowski</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">这篇文章通过一系列尖锐的问题，从不同角色（开发者、CTO/EM、业务方）出发，揭示了隐藏在代码库中的 technical debt 和工程效率问题。它提供了一个审计代码库的实用框架。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Ally 这个问题列表太棒了！直接戳中痛点。关键是，你可以用这些问题来启动一次内部的 tech debt audit。试试问问你的 team，看看大家最怕碰哪个角落？这能帮你找到最需要优化的点。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything" target="_blank" rel="noopener">Anthropic and the Pentagon</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章深入分析了 Anthropic 与五角大楼的合作，指出 AI 模型正走向商品化，性能差异微小。Anthropic 及其 CEO Dario Amodei 正通过定位为“道德和值得信赖”的 AI 提供商来建立品牌价值，这在当前市场中具有重要意义。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> This is a good read on how AI companies are playing the branding game. 关键是，当技术趋于同质化，你的定位和信任度就成了核心竞争力。你可以思考一下，你的产品在用户心中是什么样的“人设”？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/ainews-ai-engineer-will-be-the-last" target="_blank" rel="noopener">[AINews] AI Engineer will be the LAST job</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">文章探讨了AI工程师是否会是最后一个被AI取代的职业。作者认为，虽然AI在自动化方面进步迅速，但AI工程师的创造性、复杂问题解决能力以及对AI伦理和安全性的考量，使其成为一个相对不容易被取代的岗位。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, AI Engineer as the LAST job? Interesting take. 关键是，AI工程师需要的是创造力 &amp; 解决复杂问题的能力，这可不是prompt engineering能完全替代的。你可以多关注AI伦理和安全领域，这块儿需求只会越来越大。试试深入理解AI的局限性，而不是一味追求效率。</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/" target="_blank" rel="noopener">Introducing Segment Anything: Working toward the first foundation model for image segmentation</a></div>
+<span class="article-stars">⭐⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 介绍了 Segment Anything Model (SAM)，一个通用的图像分割 foundation model。SAM 能够根据提示（点、框、文本）进行零样本分割，为图像分割领域带来新的可能性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, Segment Anything Model (SAM) is a game-changer for image segmentation! 关键是它能 zero-shot segmentation with prompts. Try it out for your next image analysis project, you might be surprised by the flexibility. This is definitely a foundation model to watch. 💪</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/descript" target="_blank" rel="noopener">How Descript enables multilingual video dubbing at scale</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">Descript 利用 OpenAI 模型实现大规模多语言视频配音，优化了翻译的意义和时间，使配音听起来自然。文章分享了其产品设计思路和一线经验。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, Descript using OpenAI for multilingual dubbing at scale is smart! Key takeaway: optimizing for both meaning AND timing is crucial for natural-sounding dubbed speech. Try to think about how you can integrate similar cross-modal optimizations in your own projects. What's your next step?</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/" target="_blank" rel="noopener">Announcing the 2023 Meta Research PhD Fellowship award winners</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 公布了 2023 年 PhD Fellowship 获奖者名单。该奖项旨在支持在人工智能和相关领域做出杰出贡献的博士生，推动前沿研究。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Congrats to the winners! 这类奖项是看未来潜力，对我们 Builder 来说，关注这些获奖者的研究方向，或许能提前洞察到下一波 AI 浪潮。你可以去看看他们的研究领域，找找灵感。</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🎙️ 播客精选</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.dwarkesh.com/p/ada-palmer" target="_blank" rel="noopener">How cosplaying Ancient Rome led to the scientific revolution</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Dwarkesh Podcast</div>
+<div class="article-summary">这篇文章探讨了文艺复兴时期，古罗马的“cosplay”如何意外地催生了科学革命。它揭示了印刷术的普及并非一蹴而就，而是经历了从书籍到小册子的演变，并强调了像宗教裁判所这样的机构，在追求控制的过程中，无意中推动了科学的进步和同行评审的发展。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, this is a fascinating take on the Renaissance! It's not just about fancy dresses, but how ideas spread and how even control mechanisms can spur innovation. Key takeaway: Don't underestimate the power of distributed dissemination, even for seemingly mundane things like pamphlets. Try to think about how your product's features can be easily shared and iterated upon.</div>
+</div>
+</section>
+
+        <footer class="footer">
+            <p>Ada AI 日报 · 为 Builder 精选的 AI 资讯</p>
+            <p style="margin-top: 8px;">由 Gemini API 驱动 · 灵感来自 Zara Zhang</p>
+            <nav class="nav">
+                <a href="./index.html">📋 目录</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
