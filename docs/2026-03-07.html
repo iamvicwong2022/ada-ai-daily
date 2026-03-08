@@ -263,15 +263,15 @@
             <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
             <div class="stats">
                 <div class="stat">
-                    <div class="stat-num">7</div>
+                    <div class="stat-num">15</div>
                     <div class="stat-label">精选文章</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">5</div>
+                    <div class="stat-num">4</div>
                     <div class="stat-label">信息源</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">3</div>
+                    <div class="stat-num">0</div>
                     <div class="stat-label">已过滤</div>
                 </div>
             </div>
@@ -281,72 +281,141 @@
 <h2 class="category-title">🛠️ Builder 视角</h2>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/ally-piechowski/#atom-everything" target="_blank" rel="noopener">Quoting Ally Piechowski</a></div>
+<div class="article-title"><a href="https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything" target="_blank" rel="noopener">Agentic manual testing</a></div>
 <span class="article-stars">⭐⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 Simon Willison</div>
-<div class="article-summary">文章引用了 Ally Piechowski 提出的，针对开发者、CTO/EM 和业务方的一系列尖锐问题，旨在揭示潜在的 technical debt 和工程效率问题。这些问题能帮助团队审视代码库和开发流程。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> These questions are gold! 关键是，别只问，要真的去 audit。试试从“What’s the one area you’re afraid to touch?”开始，看看大家最怕碰哪个模块，那里很可能藏着大问题。#technical-debt</div>
+<div class="article-summary">文章探讨了 Agentic manual testing 的价值，强调即使有自动化测试，人工验证依然重要。作者提出使用 `python -c` 等方式让 agent 手动测试代码，以发现自动化测试遗漏的问题。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于 Agentic manual testing 的文章很有意思。关键是，自动化测试不是万能的，人工验证才能发现那些细微但致命的问题。你可以试试让你的 agent 用 `python -c` 这样的方式来手动测试代码，看看能发现什么惊喜！</div>
 </div>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything" target="_blank" rel="noopener">Anthropic and the Pentagon</a></div>
+<div class="article-title"><a href="https://www.latent.space/p/cursor-third-era" target="_blank" rel="noopener">Cursor's Third Era: Cloud Agents</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">Cursor 宣布进入“第三软件开发时代”，其 Cloud Agents 已超越 VSCode fork 的 IDE 用例。这标志着 Agent Lab 的重要进展，可能预示着新的开发范式。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Yo, Cursor 这么快就进入第三时代了？Cloud Agents 听起来很有意思。关键是，这会怎么改变我们写代码的 workflow？试试看他们的新功能，看看能不能帮你省点时间，或者解锁新玩法。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything" target="_blank" rel="noopener">Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager</a></div>
 <span class="article-stars">⭐⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 Simon Willison</div>
-<div class="article-summary">这篇文章深入分析了 Anthropic 和 Pentagon 的合作，指出 AI 模型正趋于商品化，性能差异微小。Anthropic 及其 CEO Dario Amodei 正通过塑造“道德和值得信赖”的品牌形象来获取市场价值。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Interesting take on Anthropic's branding play with the Pentagon. Key takeaway: In a commoditized AI market, trust and ethics become your differentiator. You can learn from this – how are you positioning your product's unique value beyond just features? 试试从用户信任的角度去打磨你的产品故事。</div>
+<div class="article-summary">本文揭示了一个巧妙的 Clinejection 攻击链，利用 AI issue triager 的 prompt injection 漏洞，通过操纵 issue title 触发恶意命令执行。攻击者进一步利用 GitHub Actions 缓存机制，实现 cache poisoning，最终窃取生产环境的 NPM 发布 secrets。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> This is a solid security deep-dive! 🤯 Key takeaway: prompt injection isn't just about tricking the AI, it's about how that trick can chain into other system vulnerabilities. For builders, always review how AI tools interact with your CI/CD and secrets management. Try to isolate AI execution environments and limit their access.</div>
 </div>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://www.latent.space/p/ainews-ai-engineer-will-be-the-last" target="_blank" rel="noopener">[AINews] AI Engineer will be the LAST job</a></div>
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/5/introducing-gpt54/#atom-everything" target="_blank" rel="noopener">Introducing GPT‑5.4</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">OpenAI 发布了 GPT-5.4 系列 API 模型 (gpt-5.4, gpt-5.4-pro)，拥有 100 万 token 上下文窗口，知识截止日期为 2025 年 8 月 31 日。新模型在编码和电子表格建模等任务上显著优于前代，并已集成到 ChatGPT 和 Codex CLI。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> GPT-5.4 来了！1M context window，编码和 spreadsheet 性能大跃进。赶紧试试 API，看看你的 workflow 能提速多少。关键是，这个 1M context window 能解锁多少新玩法？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Mar/5/chardet/#atom-everything" target="_blank" rel="noopener">Can coding agents relicense open source through a “clean room” implementation of code?</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章探讨了 AI coding agents 如何通过类似 &quot;clean room&quot; 的方式重写开源代码，引发了对 LGPL 协议下重新授权的法律和伦理争议。以 chardet 库为例，新版本声称是 MIT 许可的重写，但原作者认为这违反了 LGPL。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> This is a super interesting legal/ethical grey area for AI-generated code. Key takeaway: If you're using AI to rewrite OSS, understand the original license implications. You might need to do more than just a &quot;ground-up rewrite&quot; to avoid license violations. 试试看清楚 original code 的 exposure level.</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/ainews-gpt-54-sota-knowledge-work" target="_blank" rel="noopener">[AINews] GPT 5.4: SOTA Knowledge Work -and- Coding -and- CUA Model, OpenAI is so very back</a></div>
 <span class="article-stars">⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 Swyx (Latent Space)</div>
-<div class="article-summary">文章探讨了AI工程师是否会是最后一个被AI取代的职业。作者认为，虽然AI技术飞速发展，但AI工程师的创造性、复杂问题解决能力以及对AI系统的理解和构建能力，使其在短期内难以被完全自动化。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 'AI Engineer will be the LAST job'? Interesting take. 关键是 AI Engineer 还在 building the future, not just using it.  你可以关注 AI system design &amp; complex problem-solving skills.  This is where the value is.</div>
+<div class="article-summary">文章宣称 OpenAI 发布了 GPT 5.4，并称其为 SOTA Knowledge Work, Coding, and CUA Model。作者认为这是 OpenAI 的一次重大胜利。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Swyx 这篇有点意思，但信息太少了。关键是 OpenAI 到底发布了啥？如果真有 SOTA 的 Knowledge Work 和 Coding 能力，那对我们 Builder 来说就是大利好。你可以关注下官方的正式发布信息，看看有没有具体的能力演示。</div>
 </div>
 </section>
 <section class="category">
 <h2 class="category-title">🏢 公司深度</h2>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://openai.com/index/descript" target="_blank" rel="noopener">How Descript enables multilingual video dubbing at scale</a></div>
+<div class="article-title"><a href="https://openai.com/index/balyasny-asset-management" target="_blank" rel="noopener">How Balyasny Asset Management built an AI research engine for investing</a></div>
 <span class="article-stars">⭐⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 OpenAI</div>
-<div class="article-summary">Descript 利用 OpenAI 模型实现大规模多语言视频配音，优化了翻译的意义和时序，使配音听起来自然。这展示了 AI 在内容本地化方面的强大能力。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, Descript is using OpenAI models for multilingual dubbing at scale! 关键是 they're optimizing for meaning AND timing.  If you're building content localization tools, you should definitely check out how they sync audio.  试试看他们的 demo!</div>
+<div class="article-summary">Balyasny Asset Management 利用 GPT-5.4 构建了一个 AI 研究引擎，通过严格的模型评估和 Agent 工作流，实现了大规模的投资分析转型。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇挺有意思的，展示了如何用 GPT-5.4 搞定复杂的金融分析。关键是 Balyasny 的 rigor，不是随便用用。你可以关注下他们怎么做 model evaluation 和 agent workflow 的，这块儿很有借鉴意义。</div>
 </div>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/" target="_blank" rel="noopener">Introducing Segment Anything: Working toward the first foundation model for image segmentation</a></div>
+<div class="article-title"><a href="https://ai.facebook.com/blog/ai-dataset-animation-drawings/" target="_blank" rel="noopener">A new, unique AI dataset for animating amateur drawings</a></div>
 <span class="article-stars">⭐⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 Meta Research</div>
-<div class="article-summary">Meta Research 介绍了 Segment Anything Model (SAM)，一个旨在成为图像分割领域首个 foundation model 的项目。SAM 能够根据提示（如点、框、文本）分割图像中的任何对象，为下游任务提供了强大的通用能力。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, SAM looks like a game-changer for image segmentation! 🚀  This foundation model approach means less custom work for us.  关键是，你可以开始思考如何利用 SAM 的 zero-shot capabilities 来加速你的 AI product development.  试试看它在你的 use case 上表现如何！</div>
+<div class="article-summary">Meta Research 发布了一个新颖的 AI 数据集，专门用于将业余绘画转化为动画。这个数据集为 AI 驱动的动画创作提供了新的可能性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个新数据集很有意思！对于想做动画的朋友，可以试试用它来把你的手绘草图变成动起来的画面。关键是，它能降低动画制作的门槛，让更多人玩起来。试试看？</div>
 </div>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/" target="_blank" rel="noopener">Announcing the 2023 Meta Research PhD Fellowship award winners</a></div>
+<div class="article-title"><a href="https://engineering.fb.com/2023/04/06/open-source/buck2-open-source-large-scale-build-system/" target="_blank" rel="noopener">Build faster with Buck2: Our open source build system</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 开源了 Buck2，一个旨在加速构建过程的系统。它通过并行执行、缓存和优化的依赖管理，能显著提升开发效率。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于 Buck2 的文章很有意思！对于需要处理大型项目、追求极致构建速度的团队来说，这绝对是值得研究的。关键是看它能否帮你减少等待时间，让你更快地迭代。试试看它在你的项目里能提速多少吧！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/codex-security-now-in-research-preview" target="_blank" rel="noopener">Codex Security: now in research preview</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 发布了 Codex Security 的研究预览版 (research preview)。这是一个 AI 应用安全代理，能够分析项目上下文，更准确地检测、验证和修复复杂漏洞，减少误报。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Codex Security 听起来挺有意思的，能帮你省不少安全审计的时间。试试看它能不能帮你快速定位那些棘手的安全问题，关键是看它在真实项目中的误报率怎么样。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/5/how-generational-differences-affect-consumer-attitudes-towards-ads/" target="_blank" rel="noopener">How generational differences affect consumer attitudes towards ads</a></div>
 <span class="article-stars">⭐⭐⭐</span>
 </div>
 <div class="article-source">📍 Meta Research</div>
-<div class="article-summary">Meta Research 宣布了 2023 年 PhD Fellowship 奖项的获奖者。该奖项旨在支持在计算机科学领域做出杰出贡献的研究生，并鼓励他们继续深耕前沿研究。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Congrats to the winners! 这种 fellowship 机会挺多的，关键是找到适合你研究方向的，然后提前准备，多跟导师/教授聊聊。试试关注一下 Google AI, Microsoft Research 的类似项目，说不定有惊喜！</div>
+<div class="article-summary">Meta Research 的一项研究，与 CrowdDNA 合作，旨在了解不同社交媒体平台上消费者对广告的态度，特别是代际差异的影响。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 了解用户对 ads 的态度挺重要的。关键是，你的产品/功能，不同代际的用户会有啥不同反应？试试做个 quick survey，或者 analyze existing user data 看看。</div>
 </div>
-</section>
-<section class="category">
-<h2 class="category-title">🎙️ 播客精选</h2>
 <div class="article">
 <div class="article-header">
-<div class="article-title"><a href="https://www.dwarkesh.com/p/ada-palmer" target="_blank" rel="noopener">How cosplaying Ancient Rome led to the scientific revolution</a></div>
-<span class="article-stars">⭐⭐⭐⭐</span>
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/every-tree-counts-large-scale-mapping-of-canopy-height-at-the-resolution-of-individual-trees/" target="_blank" rel="noopener">Every tree counts</a></div>
+<span class="article-stars">⭐⭐⭐</span>
 </div>
-<div class="article-source">📍 Dwarkesh Podcast</div>
-<div class="article-summary">这篇文章探讨了文艺复兴时期，从古罗马的Cosplay到科学革命的奇特演变。重点介绍了印刷术的传播和发展，以及宗教裁判所作为早期“实验实验室”的角色，意外推动了同行评审的发展。</div>
-<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, 看到这篇文章讲到Inquisition accidentally invented peer review，很有意思！下次做产品，可以思考下，怎么通过某种机制，让用户/社区的反馈，变成一种“同行评审”，帮助我们发现潜在问题和改进方向。试试看？</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 正在开发技术以实现其到 2030 年实现净零排放的目标，并将这些技术开源。这展示了科技公司在可持续发展方面的努力和技术贡献。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Meta 在做 net zero 目标，并且把技术 open source 了。这说明 tech company 也在认真考虑 carbon footprint。关键是，我们可以关注下他们开源的技术，看看有没有能用在自己项目上的，或者从中学到点东西。试试关注 Meta Research 的 repo 吧。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.metacareers.com/life/how-a-non-traditional-background-led-to-cutting-edge-xr-tech" target="_blank" rel="noopener">How a non-traditional background led to cutting-edge XR tech</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">文章探讨了非传统背景如何催生前沿 XR tech，强调跨学科思维在 Meta Research 的重要性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 挺有意思的，非科班出身也能搞出牛X的 XR tech。关键是跨界思维，多试试不同领域的知识碰撞。想想看，你的非本行经验，会不会是下一个突破点？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://about.fb.com/news/2023/04/how-the-metaverse-can-transform-education/" target="_blank" rel="noopener">How the metaverse can transform education</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 探讨了 metaverse 如何变革教育，重点在于沉浸式学习体验和协作。文章提及了虚拟实验室、历史场景重现等应用，但缺乏具体的产品发布或深度技术细节。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Meta Research 讲了 metaverse 在教育上的潜力，比如虚拟实验室。但光说不练假把式，关键是看他们能拿出什么 killer app。你可以关注一下 Meta 的教育产品线，看看有没有真正落地的东西。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/3/announcing-the-winners-of-the-2022-foundational-integrity-research-request-for-proposals-/" target="_blank" rel="noopener">Announcing the winners of the 2022 Foundational Integrity Research request for proposals</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 宣布了 2022 Foundational Integrity Research request for proposals 的获奖者。这项研究旨在推进基础完整性研究。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 announcement 主要是公布结果，没有太多技术细节。但可以关注一下这些获奖项目，看看他们具体在做什么，也许能找到一些新的研究方向。关键是，去 Meta Research 官网看看具体获奖名单和项目介绍！</div>
 </div>
 </section>
 
