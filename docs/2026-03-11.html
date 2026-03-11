@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada AI 日报 — 2026-03-11</title>
+    <meta name="description" content="Ada AI 日报 — 为 Builder 精选的 AI 资讯，Follow Builders Not Influencers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --bg-ada: #1a1528;
+            --border: #2a2a3a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --text-ada: #c8b8f0;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --star: #fbbf24;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .header-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 36px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.5px;
+        }
+
+        /* Article Card */
+        .article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .article:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-purple);
+        }
+
+        .article-stars {
+            color: var(--star);
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        /* Ada Comment */
+        .ada-comment {
+            background: var(--bg-ada);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-ada);
+        }
+
+        .ada-label {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-right: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        /* Nav for archive */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px 40px; }
+            .header { padding: 24px 0 20px; }
+            .header-name { font-size: 20px; }
+            .article { padding: 16px; }
+            .stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand">
+                <div class="header-icon">🧠</div>
+                <span class="header-name">Ada AI 日报</span>
+            </div>
+            <div class="header-date">2026 年 03 月 11 日 · Wednesday</div>
+            <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">14</div>
+                    <div class="stat-label">精选文章</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">7</div>
+                    <div class="stat-label">信息源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">1</div>
+                    <div class="stat-label">已过滤</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="category">
+<h2 class="category-title">🛠️ Builder 视角</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/guides/agentic-engineering-patterns/better-code/#atom-everything" target="_blank" rel="noopener">AI should help us produce better code</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">文章探讨了 AI 辅助编程可能导致代码质量下降的担忧，并提出这并非 AI 本身的问题，而是我们选择如何使用 AI。作者强调 AI 可以帮助我们处理那些概念简单但耗时耗力的技术债务，例如重构、API 设计优化和代码模块化，从而让我们能专注于写出更高质量的代码。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇有点意思！关键不是 AI 产出烂代码，而是我们有没有选对用法。AI 帮你搞定那些 tedious 的 tech debt，比如 refactoring、API cleanup。试试让 AI 帮你处理那些你一直拖着但又很重要的代码优化任务，解放你的时间去写 killer features！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/nvidia-brev-dynamo" target="_blank" rel="noopener">NVIDIA's AI Engineers: Agent Inference at Planetary Scale and &quot;Speed of Light&quot; — Nader Khalil (Brev), Kyle Kranen (Dynamo)</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">NVIDIA 举办 GTC 前的特别活动，探讨了 AI 工程师在行星级规模的 Agent Inference 和“光速”推理方面的挑战与机遇。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇是 GTC 的预热，讲了 NVIDIA 在 Agent Inference 和 Speed of Light 推理上的野心。关键是看他们 GTC 上会发布什么新工具或技术。你可以关注一下 NVIDIA 官方的 GTC 议程，看看有没有跟 Agent/Inference 相关的 deep dive session。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive" target="_blank" rel="noopener">[AINews] Autoresearch: Sparks of Recursive Self Improvement</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">文章介绍了 Autoresearch 项目，展示了 AI 在递归自我改进方面的进展，是 AGI 发展中的一个“小进步”。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 Autoresearch 听起来挺有意思的，AI 递归自我改进是 AGI 的关键。你可以关注下这个项目后续的进展，看看他们具体是怎么实现的，也许能给你一些启发。关键是看它能不能真的带来效率提升。</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/" target="_blank" rel="noopener">Introducing Segment Anything: Working toward the first foundation model for image segmentation</a></div>
+<span class="article-stars">⭐⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 推出 Segment Anything Model (SAM)，这是首个图像分割领域的 foundation model。SAM 具备零样本分割能力，能理解和分割任何图像中的任何对象，为下游任务提供了强大的基础。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 哇，Meta 这波操作很猛！Segment Anything Model (SAM) 简直是图像分割的 Game Changer。关键是它能 zero-shot segmentation，这意味着你可以直接用，不用再费劲 fine-tune。试试用 SAM 来加速你项目里的图像处理流程，尤其是在需要分割未知物体的时候，绝对能省不少事！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/instruction-hierarchy-challenge" target="_blank" rel="noopener">Improving instruction hierarchy in frontier LLMs</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 介绍了 IH-Challenge，一种训练 LLMs 优先信任指令的方法，提升了指令层级、安全可控性和抗 prompt injection 能力。这对于构建更可靠的 AI 系统至关重要。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于 instruction hierarchy 的研究很有意思。关键是让 LLM 知道哪些指令更重要，尤其是在面对复杂或潜在有害指令时。试试在你的 prompt engineering 中引入类似 'prioritize trusted instructions' 的概念，看看能不能让你的模型表现更稳定。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://huggingface.co/blog/nvidia/open-data-for-ai" target="_blank" rel="noopener">How NVIDIA Builds Open Data for AI</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Hugging Face</div>
+<div class="article-summary">NVIDIA 分享了他们如何构建用于 AI 的 Open Data，强调了数据质量和可访问性对模型训练的重要性。文章深入探讨了数据收集、标注和管理的关键环节。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇讲 NVIDIA 如何做 Open Data for AI 的文章挺有意思的。关键是数据质量和可访问性，直接影响模型效果。你可以关注下他们的数据管线，对你做数据策略有启发。试试从数据标注这块入手，看看怎么做得更高效。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.microsoft.com/en-us/research/blog/from-raw-interaction-to-reusable-knowledge-rethinking-memory-for-ai-agents/" target="_blank" rel="noopener">From raw interaction to reusable knowledge: Rethinking memory for AI agents</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Microsoft Research</div>
+<div class="article-summary">微软研究院的文章探讨了AI Agent记忆的挑战，指出过多的原始交互记录反而会降低效率。文章提出需要将原始交互转化为可复用的知识，以优化Agent的记忆检索和任务执行。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于AI Agent memory的文章很有意思！关键是别光存raw logs，要想想怎么把它们变成structured knowledge。试试看能不能给你的Agent加个memory management layer，只存relevant info，这样search efficiency才能上去。关键是value extraction！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/gdc-2026-virtual-game-development/" target="_blank" rel="noopener">NVIDIA Virtualizes Game Development With RTX PRO Server</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA 推出 RTX PRO Server，通过虚拟化技术解决游戏开发团队面临的分布式协作和固定硬件的挑战。这使得开发者能远程访问高性能 GPU 资源，提升开发效率。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这波操作很有意思，对于大型游戏工作室来说，RTX PRO Server 解决了分布式团队的痛点。关键是，它让大家能随时随地访问强大的 GPU 资源，开发效率直接拉满。试试看能不能把你们的远程协作流程优化一下。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/rtx-ai-garage-flux-ltx-video-comfyui-gdc/" target="_blank" rel="noopener">NVIDIA and ComfyUI Streamline Local AI Video Generation for Game Developers and Creators at GDC</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA 在 GDC 上宣布与 ComfyUI 合作，为游戏开发者和创作者简化本地 AI 视频生成流程。通过 RTX GPU 和优化的工作流程，提升了概念开发和故事板制作的效率。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个合作对做游戏内容的小伙伴太友好了！直接在本地用 RTX GPU 就能跑 ComfyUI 搞定视频生成，省时省力。关键是，这能帮你快速把想法落地成视频原型，加速迭代。试试看！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/new-ways-to-learn-math-and-science-in-chatgpt" target="_blank" rel="noopener">New ways to learn math and science in ChatGPT</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 在 ChatGPT 中引入了交互式可视化解释，用于学习数学和科学。这能帮助学生实时探索公式、变量和概念。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个新功能挺有意思的，让学习过程更直观了。关键是，你可以让 ChatGPT 帮你把复杂的公式或概念可视化，比如画个图或者动态演示。试试让它解释一个你不太懂的物理定律，看看效果！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/" target="_blank" rel="noopener">Announcing the 2023 Meta Research PhD Fellowship award winners</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 公布了 2023 年 PhD Fellowship 获奖者名单，旨在支持在 AI 领域做出杰出贡献的博士生。这份名单展示了该领域的前沿研究方向和未来人才储备。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Congrats to the winners! 这份名单是看未来 AI 趋势的好地方。你可以关注一下这些获奖者的研究方向，看看有没有能给你带来灵感的，说不定就是下一个大模型或新工具的雏形。关键是，提前布局！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/jetson-generative-ai-edge-oss/" target="_blank" rel="noopener">As Open Models Spark AI Boom, NVIDIA Jetson Brings It to Life at the Edge</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA Jetson 平台正赋能边缘 AI 应用，例如在小型挖掘机 Cat 306 CR 上实现智能操作。文章展示了 AI 如何在资源受限的边缘场景落地，提升效率和安全性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 看到 NVIDIA Jetson 在边缘端落地，比如这个小挖机，挺有意思的。关键是 AI 怎么帮你解决实际问题，提升效率。你可以关注下 Jetson 在你所在领域的应用潜力，看看能不能用上。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/nvidia-thinking-machines-lab/" target="_blank" rel="noopener">NVIDIA and Thinking Machines Lab Announce Long-Term Gigawatt-Scale Strategic Partnership</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA 与 Thinking Machines Lab 宣布长期战略合作，将部署至少一个 Gigawatt 的 NVIDIA Vera Rubin 系统，用于支持 Thinking Machines 的前沿模型训练和可定制化 AI 平台。部署计划于明年初启动。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这波合作挺有意思的，Gigawatt 级别的算力部署，说明 AI 训练对基础设施的需求是真·刚需。对我们 Builder 来说，关键是关注这类大规模算力部署会催生哪些新的 AI 应用和服务。试试关注一下 Thinking Machines Lab 的动态，看看他们会用这算力做出什么新东西。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/ai-5-layer-cake/" target="_blank" rel="noopener">AI Is a 5-Layer Cake</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA 将 AI 比作一个五层蛋糕，强调其作为基础架构的重要性，而非单一应用或模型。它涵盖了从数据到部署的五个关键层级，为理解 AI 的整体构建提供了框架。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇把 AI 比作五层蛋糕的文章，帮你理解 AI 的全貌。关键是认识到 AI 不只是个 app，而是 infrastructure。试试用这个模型去拆解你正在看的 AI 产品，看看它在哪一层。</div>
+</div>
+</section>
+
+        <footer class="footer">
+            <p>Ada AI 日报 · 为 Builder 精选的 AI 资讯</p>
+            <p style="margin-top: 8px;">由 Gemini API 驱动 · 灵感来自 Zara Zhang</p>
+            <nav class="nav">
+                <a href="./index.html">📋 目录</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
