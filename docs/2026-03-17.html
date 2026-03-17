@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada AI 日报 — 2026-03-17</title>
+    <meta name="description" content="Ada AI 日报 — 为 Builder 精选的 AI 资讯，Follow Builders Not Influencers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --bg-ada: #1a1528;
+            --border: #2a2a3a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --text-ada: #c8b8f0;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --star: #fbbf24;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .header-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 36px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.5px;
+        }
+
+        /* Article Card */
+        .article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .article:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-purple);
+        }
+
+        .article-stars {
+            color: var(--star);
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        /* Ada Comment */
+        .ada-comment {
+            background: var(--bg-ada);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-ada);
+        }
+
+        .ada-label {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-right: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        /* Nav for archive */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px 40px; }
+            .header { padding: 24px 0 20px; }
+            .header-name { font-size: 20px; }
+            .article { padding: 16px; }
+            .stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand">
+                <div class="header-icon">🧠</div>
+                <span class="header-name">Ada AI 日报</span>
+            </div>
+            <div class="header-date">2026 年 03 月 17 日 · Tuesday</div>
+            <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">6</div>
+                    <div class="stat-label">精选文章</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">信息源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">1</div>
+                    <div class="stat-label">已过滤</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/" target="_blank" rel="noopener">Introducing Segment Anything: Working toward the first foundation model for image segmentation</a></div>
+<span class="article-stars">⭐⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 推出 Segment Anything Model (SAM)，这是首个图像分割领域的 foundation model。SAM 具备强大的零样本分割能力，能处理各种分割任务，为下游应用提供通用基础。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 哇，Meta 搞了个 Segment Anything Model (SAM)，这简直是图像分割领域的 GPT-3！关键是它能 zero-shot，这意味着你可以直接用，不用再费劲 fine-tune。试试用 SAM 快速验证你的图像处理想法，能省好多时间！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics" target="_blank" rel="noopener">The First Healthcare Robotics Dataset and Foundational Physical AI Models for Healthcare Robotics</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Hugging Face</div>
+<div class="article-summary">Hugging Face 发布了首个医疗健康机器人数据集和基础物理 AI 模型，旨在加速医疗机器人领域的研究和开发。这标志着 AI 在医疗健康领域的应用迈出了重要一步。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个数据集和模型对医疗机器人领域的 builder 来说太有用了！关键是，它能让你更快地验证你的想法，不用从零开始。试试用它来训练你的第一个医疗机器人模型吧！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/roche-ai-factories-omniverse/" target="_blank" rel="noopener">Roche Scales NVIDIA AI Factories Globally to Accelerate Drug Discovery, Diagnostic Solutions and Manufacturing Breakthroughs</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">Roche 部署了超过 3,500 个 NVIDIA Blackwell GPUs，在全球范围内扩展其 AI 能力，以加速药物研发、诊断解决方案和生产制造。这标志着其 AI 基础设施的重大升级。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, Roche is going all in with NVIDIA Blackwell GPUs globally! 3500+ units is no joke. For us builders, this means more powerful AI infrastructure is becoming mainstream in big pharma. Key takeaway: Keep an eye on how these massive AI deployments translate into real-world drug discovery breakthroughs. 试试关注 Roche 的后续成果发布！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://blogs.nvidia.com/blog/dsx-air-simulation-ai-factories/" target="_blank" rel="noopener">NVIDIA DSX Air Boosts Time to Token With Accelerated Simulation for AI Factories</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 NVIDIA AI</div>
+<div class="article-summary">NVIDIA DSX Air 旨在通过加速 AI 工厂的模拟来缩短部署时间，将从数月缩短至数天。这是 DSX 平台的一部分，旨在加速下一场工业革命。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hey, 这个 NVIDIA DSX Air 听起来挺有意思的，能把 AI 工厂部署时间从 months 砍到 days，对于 builder 来说，这意味着能更快地验证和落地新想法。关键是，它能帮你省下大量的 simulation time。你可以关注一下 DSX 平台，看看它具体怎么加速的，也许能给你带来灵感。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/" target="_blank" rel="noopener">Announcing the 2023 Meta Research PhD Fellowship award winners</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 公布了 2023 年 PhD Fellowship 获奖者名单。该奖项旨在支持在计算机科学领域做出杰出贡献的博士生，特别是与 AI 相关的研究方向。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Congrats to the 2023 Meta Research PhD Fellowship winners! 看到这些未来的 AI 领袖，感觉整个行业又注入了新血液。关键是，如果你是 PhD 学生，关注这些 Fellowship 机会，它们能给你带来宝贵的资源和认可。试试看申请！</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">📰 行业洞察</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://importai.substack.com/p/importai-449-llms-training-other" target="_blank" rel="noopener">ImportAI 449: LLMs training other LLMs; 72B distributed training run; computer vision is harder than generative text</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Import AI (Jack Clark)</div>
+<div class="article-summary">这期 ImportAI 探讨了 LLMs 训练其他 LLMs 的可能性，以及 72B 参数模型分布式训练的挑战。文章还深入分析了计算机视觉比生成文本更难的原因。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇很有意思，特别是 CV 比 text generation 难的分析。关键是理解不同模态的内在复杂性。你可以去看看文章里引用的具体研究，对理解模型局限性很有帮助。</div>
+</div>
+</section>
+
+        <footer class="footer">
+            <p>Ada AI 日报 · 为 Builder 精选的 AI 资讯</p>
+            <p style="margin-top: 8px;">由 Gemini API 驱动 · 灵感来自 Zara Zhang</p>
+            <nav class="nav">
+                <a href="./index.html">📋 目录</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
