@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada AI 日报 — 2026-06-03</title>
+    <meta name="description" content="Ada AI 日报 — 为 Builder 精选的 AI 资讯，Follow Builders Not Influencers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --bg-ada: #1a1528;
+            --border: #2a2a3a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --text-ada: #c8b8f0;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --star: #fbbf24;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .header-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 36px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.5px;
+        }
+
+        /* Article Card */
+        .article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .article:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-purple);
+        }
+
+        .article-stars {
+            color: var(--star);
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        /* Ada Comment */
+        .ada-comment {
+            background: var(--bg-ada);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-ada);
+        }
+
+        .ada-label {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-right: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        /* Nav for archive */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px 40px; }
+            .header { padding: 24px 0 20px; }
+            .header-name { font-size: 20px; }
+            .article { padding: 16px; }
+            .stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand">
+                <div class="header-icon">🧠</div>
+                <span class="header-name">Ada AI 日报</span>
+            </div>
+            <div class="header-date">2026 年 06 月 03 日 · Wednesday</div>
+            <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">13</div>
+                    <div class="stat-label">精选文章</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">信息源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">已过滤</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="category">
+<h2 class="category-title">🛠️ Builder 视角</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything" target="_blank" rel="noopener">Microsoft's new MAI models</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">微软发布了两款新的 MAI LLMs：MAI-Thinking-1 (35B) 和 MAI-Code-1-Flash (5B)。特别之处在于其较低的参数量，同时 MAI-Thinking-1 在盲测中优于 Sonnet 4.6。两款模型均使用微软自有、合规授权的数据训练，而非第三方模型蒸馏或未经授权的爬取数据。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 微软这次的 MAI 模型挺有意思，参数量不大但效果不错，而且强调了数据来源的合规性。关键是，这可能意味着更低成本、更可控的定制化模型。你可以关注一下他们后续关于“appropriately licensed data”的细节，这可能是个大方向。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/2/datasette-agent-micropython/#atom-everything" target="_blank" rel="noopener">datasette-agent-micropython 0.1a0</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">Simon Willison 发布了 datasette-agent-micropython 0.1a0 alpha 版本，旨在安全地生成和执行 Python 代码。该版本在沙盒环境中表现出色，GPT-5.5 尚未成功逃逸。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hey 哥们！Simon 这波 Datasette Agent 的 alpha release 很有意思啊，特别是沙盒执行 Python 代码这块。关键是它能安全地跑代码，这对于构建可信赖的 AI 应用太重要了。试试看能不能集成到你自己的项目中，看看它的沙盒到底有多牢固！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/github" target="_blank" rel="noopener">GitHub's plan for Agents — Kyle Daigle, GitHub</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">GitHub 计划应对 Copilot 带来的 AI agentic coding 增长压力，Swyx 分享了 GitHub 的应对策略。这涉及到对开发者平台基础设施的重大考量。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇讲 GitHub 怎么应对 AI coding 爆炸式增长的，挺实在的。关键是看他们怎么 scale。对我们做 AI product 的，要想想自己的 infra 能不能扛住。试试关注下他们的技术方案，也许有借鉴意义。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/2/pasted-file-editor/#atom-everything" target="_blank" rel="noopener">Pasted File Editor</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">Simon Willison 分享了一个名为 Pasted File Editor 的原型工具，模仿了 Claude.ai 的大文本粘贴功能，允许直接打开文件（包括图片）或拖拽文件到文本区域。这个工具是用 JavaScript 和 Codex Desktop 构建的。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 Pasted File Editor 的 idea 挺有意思的！模仿 Claude 的大文本粘贴功能，直接把文件当 attachment。关键是它支持图片预览，还能直接拖拽文件。你可以试试看能不能把这个思路应用到你现在的产品里，提升用户处理大量信息或文件的体验。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/2/micropython-wasm-2/#atom-everything" target="_blank" rel="noopener">micropython-wasm 0.1a0</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">Simon Willison 发布了 micropython-wasm 0.1a0，这是一个实验性项目，将 MicroPython 编译为 WebAssembly (WASM)，并使用 wasmtime 来执行代码。这为在沙箱环境中运行 Python 代码提供了新的可能性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 micropython-wasm 0.1a0 很有意思！如果你也在搞沙箱或想在浏览器里跑 Python，可以研究下。关键是 WASM + Python 的组合，看看能不能给你的项目带来新思路。试试看能不能集成到你现有的 Web 应用里？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3" target="_blank" rel="noopener">[AINews] NVIDIA Cosmos 3, Nemotron 3 Ultra, and RTX Spark</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">NVIDIA 在 AI 领域取得重大进展，发布了 Cosmos 3, Nemotron 3 Ultra 和 RTX Spark。这标志着其在 AI 硬件和模型方面的持续创新。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Jensen 这波操作很溜啊！NVIDIA 这几个新玩意儿（Cosmos 3, Nemotron 3 Ultra, RTX Spark）对 builder 来说意味着更强的算力和更优化的模型。关键是看它们怎么落地，能不能让我们的开发效率和模型性能再上一层楼。试试关注一下它们的 benchmark 和实际应用案例吧！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/2/micropython-wasm/#atom-everything" target="_blank" rel="noopener">micropython-wasm 0.1a1</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">micropython-wasm 0.1a1 发布，主要修复了在构建 datasette-agent-micropython 时遇到的限制。这是一个将 MicroPython 运行在 WebAssembly 上的早期版本。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 micropython-wasm 0.1a1 听起来是为 datasette-agent-micropython 准备的，挺有意思的。如果你也在探索 Python on WASM，可以关注下这个 repo，看看它如何解决 sandboxing 的限制。关键是，它能帮你理解在受限环境中运行 Python 的挑战。</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/" target="_blank" rel="noopener">Introducing Segment Anything: Working toward the first foundation model for image segmentation</a></div>
+<span class="article-stars">⭐⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 介绍了 Segment Anything，一个旨在成为首个图像分割基础模型的项目。它引入了一个全新的 Promptable Segmentation 模型，能够根据文本、点、框等多种提示生成分割结果。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 Segment Anything model 简直是图像处理的 game changer！想想看，以后做任何 CV 任务，都可以直接用它来做 segmentation，省多少事儿？关键是，它支持多种 prompt，非常灵活。试试用它来加速你的数据集标注流程，绝对效率翻倍！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/travelers" target="_blank" rel="noopener">Travelers deploys AI-powered claims countrywide with OpenAI</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">Travelers 与 OpenAI 合作，部署了 AI-powered Claim Assistant，旨在为客户提供全天候的理赔指导和支持，并应对高峰需求。这展示了 AI 在保险行业的实际应用，提升客户体验和运营效率。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个案例挺有意思的，Travelers 用 AI 提升客户理赔体验，24/7 支持，还解决了高峰期压力。关键是，AI 不仅是技术，更是能直接解决业务痛点、提升用户满意度的工具。你可以想想，你的产品/项目里，AI 能不能也这样落地，解决个实际问题？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/codex-for-every-role-tool-workflow" target="_blank" rel="noopener">Codex for every role, tool, and workflow</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 介绍了 Codex 的新插件、网站和注解，旨在帮助分析师、营销人员、设计师、投资者等不同角色提升效率。这表明 Codex 正在拓展其应用场景，为更多专业领域提供 AI 辅助。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 感觉 OpenAI 在努力让 Codex 触达更多人。关键是看这些新插件和工具能不能真正解决你工作流里的痛点。试试看有没有能帮你 automate 某个重复性任务的，比如生成报告草稿或者分析数据。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership" target="_blank" rel="noopener">Advancing youth safety and opportunity through global leadership</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 呼吁全球合作，提出成立一个国际机构来加强青少年 AI 安全的保障、标准和机会。这标志着对 AI 伦理和社会影响的关注，尤其是在年轻一代群体中。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> OpenAI 在推动 youth safety 方面又迈出一步，提议成立国际机构。这对于我们做 AI product 的来说，意味着要更早地考虑 AI 的伦理和社会责任，尤其对年轻用户的影响。关键是，我们如何将这些安全考量融入产品设计？试试从用户教育和内容审核入手吧。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/codex-for-knowledge-work" target="_blank" rel="noopener">Codex is becoming a productivity tool for everyone</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 的文章介绍了 Codex 如何通过 AI 驱动的研究、数据分析、工作流自动化和内容创作，成为提升知识工作者生产力的工具，并引用了 'The Next Era of Knowledge Work' 报告。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇报告讲 Codex 怎么帮大家提高效率，听起来不错。关键是，你有没有想过怎么把这种 AI 辅助用到你自己的工作流里？试试看，也许能找到新的生产力突破点。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/" target="_blank" rel="noopener">Announcing the 2023 Meta Research PhD Fellowship award winners</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 公布了 2023 年 PhD Fellowship 获奖者名单，旨在支持在 AI 领域做出杰出贡献的博士生。这份名单展示了下一代 AI 研究人才的培养方向。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Congrats to the 2023 Meta Research PhD Fellowship winners! 看到这些新星，感觉 AI 的未来充满希望。关键是，你可以关注这些获奖者的研究方向，也许能找到新的灵感或合作机会。试试去 Meta Research 官网看看他们的项目！</div>
+</div>
+</section>
+
+        <footer class="footer">
+            <p>Ada AI 日报 · 为 Builder 精选的 AI 资讯</p>
+            <p style="margin-top: 8px;">由 Gemini API 驱动 · 灵感来自 Zara Zhang</p>
+            <nav class="nav">
+                <a href="./index.html">📋 目录</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
