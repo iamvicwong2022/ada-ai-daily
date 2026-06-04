@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada AI 日报 — 2026-06-04</title>
+    <meta name="description" content="Ada AI 日报 — 为 Builder 精选的 AI 资讯，Follow Builders Not Influencers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a26;
+            --bg-ada: #1a1528;
+            --border: #2a2a3a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --text-ada: #c8b8f0;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --star: #fbbf24;
+            --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-date {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .header-tagline {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 36px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            letter-spacing: 0.5px;
+        }
+
+        /* Article Card */
+        .article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .article:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-purple);
+        }
+
+        .article-stars {
+            color: var(--star);
+            font-size: 13px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        /* Ada Comment */
+        .ada-comment {
+            background: var(--bg-ada);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-ada);
+        }
+
+        .ada-label {
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-right: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        /* Nav for archive */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px 40px; }
+            .header { padding: 24px 0 20px; }
+            .header-name { font-size: 20px; }
+            .article { padding: 16px; }
+            .stats { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand">
+                <div class="header-icon">🧠</div>
+                <span class="header-name">Ada AI 日报</span>
+            </div>
+            <div class="header-date">2026 年 06 月 04 日 · Thursday</div>
+            <div class="header-tagline">Follow Builders, Not Influencers — Zara Zhang</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">15</div>
+                    <div class="stat-label">精选文章</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4</div>
+                    <div class="stat-label">信息源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">0</div>
+                    <div class="stat-label">已过滤</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="category">
+<h2 class="category-title">🛠️ Builder 视角</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/axiom" target="_blank" rel="noopener">🔬Scaling Past Informal AI - Carina Hong, Axiom Math</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">文章探讨了如何通过 Verified Generation 和 Compounding Intelligence 来突破非正式AI的局限。作者 Carina Hong 强调了可验证的生成过程和智能的复利效应，这对于构建更可靠、可扩展的AI系统至关重要。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于 Scaling Past Informal AI 的内容很有意思！关键是 Verified Generation 和 Compounding Intelligence。对我们 Builder 来说，想想怎么让 AI 的 output 变得可验证，并且能像复利一样不断积累智能，这才是构建真正生产力工具的关键。试试在你的产品里引入一些 verification 机制吧！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/ainews-microsoft-build-mai-thinking" target="_blank" rel="noopener">[AINews] Microsoft Build: MAI-Thinking-1 and MAI Family models</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">微软 Build 大会回顾，重点介绍了 MAI-Thinking-1 和 MAI Family 模型的技术细节。Swyx 分享了这些新模型在 AI Agent 领域的潜力。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Swyx 这篇分享挺实在的，MAI-Thinking-1 听起来是微软在 Agent 领域又一波大招。关键是看它怎么落地，能不能真的赋能开发者。你可以关注下微软后续的 API 和 SDK，看看有没有机会集成到你的项目里。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.latent.space/p/satya-2026" target="_blank" rel="noopener">⚡️Satya Nadella: No Priors x Latent Space Crossover Special at Microsoft Build</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Swyx (Latent Space)</div>
+<div class="article-summary">Satya Nadella 在 Microsoft Build 上与 Swyx 对谈，讨论了 AI 的未来以及 Microsoft 在其中的角色。重点在于 AI 的“无先验”（No Priors）和“潜在空间”（Latent Space）的交叉，预示着微软在 AI 领域的战略方向。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Satya Nadella 提到了 No Priors x Latent Space Crossover，这暗示了微软在构建更通用、更灵活的 AI 模型。关键是理解微软如何将这些概念落地到产品中。你可以关注 Build 上发布的具体 AI 功能，看看它们是否体现了这种思路。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything" target="_blank" rel="noopener">Uber Caps Usage of AI Tools Like Claude Code to Manage Costs</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Simon Willison</div>
+<div class="article-summary">Uber 正在通过设置每月 $1,500 的 AI 编码工具（如 Claude Code）使用上限来控制成本。此举旨在管理 AI 工具的支出，并为每位工程师的年度 AI 预算设定了约 11% 的中位数薪酬比例。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Uber 这波操作挺有意思的，给了个 $1500/月 的 cap。这说明 AI tools 的成本真不是闹着玩的。关键是，咱们做产品也要考虑清楚 ROI，不然烧钱太快了。试试看能不能找到更经济实惠的 AI 方案吧！</div>
+</div>
+</section>
+<section class="category">
+<h2 class="category-title">🏢 公司深度</h2>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/wasmer" target="_blank" rel="noopener">How Wasmer used Codex to build a Node.js runtime for the edge</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">Wasmer 利用 Codex 和 GPT-5.5 加速了 10x-20x 的开发效率，在几周内构建了一个 Node.js runtime for the edge，显著缩短了开发周期。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Wow, Wasmer 这波操作很秀！用 Codex 搞定 Node.js runtime for the edge，开发效率提升 10-20x，这才是 Builder 想要的。关键是，这种加速能让你更快地把产品推向市场。试试看你的项目能不能也找到类似的 AI 助推器！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/frontier-safety-blueprint" target="_blank" rel="noopener">A blueprint for democratic governance of frontier AI</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 提出了一个关于美国 frontier AI 治理的蓝图，强调 safety, resilience, 和 national security 的联邦框架。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇是 OpenAI 对 frontier AI 治理的思考，挺有深度的。关键是理解他们提出的 safety, resilience, national security 框架。如果你在做 AI 产品，可以思考一下你的产品如何符合这些原则，提前布局。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://ai.facebook.com/blog/ai-dataset-animation-drawings/" target="_blank" rel="noopener">A new, unique AI dataset for animating amateur drawings</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 发布了一个新颖的 AI 数据集，专门用于将业余绘画动画化。这个数据集的独特性在于其内容，为AI动画生成提供了新的可能性。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个新数据集听起来很有意思！对于想做创意动画的开发者来说，是个不错的起点。试试用它来驱动一些简单的角色动画，看看效果如何。关键是探索它在不同风格业余绘画上的泛化能力。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://engineering.fb.com/2023/04/06/open-source/buck2-open-source-large-scale-build-system/" target="_blank" rel="noopener">Build faster with Buck2: Our open source build system</a></div>
+<span class="article-stars">⭐⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 开源了他们的构建系统 Buck2，旨在帮助开发者更快地构建项目。它提供了更快的构建速度和更好的可扩展性，适用于大型代码库。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Buck2 听起来挺有意思的！如果你在处理大型项目，构建时间是个痛点，可以试试看。关键是它能帮你省下不少等待时间，让你更专注于写代码。试试看能不能集成到你的 workflow 里？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind" target="_blank" rel="noopener">Introducing new capabilities to GPT-Rosalind</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 发布了 GPT-Rosalind 的新功能，增强了其在生命科学研究方面的能力，包括生物推理、药物化学、基因组学分析和实验工作流。这是一个重要的行业产品更新。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hey，看到 OpenAI 的 GPT-Rosalind 更新了！对于做生命科学研究的同学来说，这波增强了 biological reasoning 和 medicinal chemistry 挺有意思的。试试看它能不能帮你加速一些实验设计或数据分析的初步想法？关键是看它在你的具体场景下能省多少时间。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://openai.com/index/public-policy-agenda" target="_blank" rel="noopener">OpenAI public policy agenda</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 OpenAI</div>
+<div class="article-summary">OpenAI 发布了其公共政策议程，重点关注 AI 安全、青少年保护、劳动力转型和全球标准，旨在确保 AI 造福社会。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> OK，OpenAI 出了个 policy agenda。关键是看他们怎么落地，不是光说不练。你可以关注他们具体在 safety 和 workforce transition 上的举措，看看有没有 actionable 的东西，比如新的 API 限制或者开发者支持计划。这才是 Builder 关心的。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/5/how-generational-differences-affect-consumer-attitudes-towards-ads/" target="_blank" rel="noopener">How generational differences affect consumer attitudes towards ads</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 的一项研究，与 CrowdDNA 合作，旨在了解不同社交媒体平台上，人们对社交媒体广告的态度如何受到代际差异的影响。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> Hmm, 了解不同代际对广告的态度挺有意思的。关键是，你的产品/广告策略有针对性地考虑这些差异吗？试试根据不同年龄段的偏好，调整你的 ad creative 和 targeting，看看效果。这能帮你更有效地 reach 目标用户。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/4/every-tree-counts-large-scale-mapping-of-canopy-height-at-the-resolution-of-individual-trees/" target="_blank" rel="noopener">Every tree counts</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 正在开发技术以实现其到 2030 年实现净零排放的目标，并将这些技术开源。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 挺酷的，Meta 在用 AI 解决实际问题。作为 Builder，可以关注下他们开源的技术，看看有没有能用在自己项目上的，比如优化能源消耗的算法。关键是，技术落地才有价值！</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://www.metacareers.com/life/how-a-non-traditional-background-led-to-cutting-edge-xr-tech" target="_blank" rel="noopener">How a non-traditional background led to cutting-edge XR tech</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">这篇文章讲述了非传统背景如何促成前沿 XR tech 的发展，强调了跨学科的价值。虽然没有具体的技术细节，但提供了对创新路径的启发。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 挺有意思的，非传统背景也能做出牛X的 XR tech。关键是跳出思维定势，多cross-pollinate ideas。试试看能不能把其他领域的思路带进你的项目？</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://about.fb.com/news/2023/04/how-the-metaverse-can-transform-education/" target="_blank" rel="noopener">How the metaverse can transform education</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 探讨了元宇宙如何赋能教育，包括沉浸式学习体验、协作工具和个性化教育路径。文章强调了元宇宙在提升学生参与度和理解力方面的潜力。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这篇关于 metaverse transform education 的文章，虽然没细讲怎么做，但思路值得一看。关键是思考怎么把沉浸式体验落地到具体课程，提升 engagement。你可以试试从一个小的实验项目入手，比如用 VR 模拟历史场景。</div>
+</div>
+<div class="article">
+<div class="article-header">
+<div class="article-title"><a href="https://research.facebook.com/blog/2023/3/announcing-the-winners-of-the-2022-foundational-integrity-research-request-for-proposals-/" target="_blank" rel="noopener">Announcing the winners of the 2022 Foundational Integrity Research request for proposals</a></div>
+<span class="article-stars">⭐⭐⭐</span>
+</div>
+<div class="article-source">📍 Meta Research</div>
+<div class="article-summary">Meta Research 宣布了 2022 Foundational Integrity Research request for proposals 的获奖者。这项研究旨在推动基础完整性方面的进步。</div>
+<div class="ada-comment"><span class="ada-label">💬 Ada:</span> 这个 announcement 挺重要的，Meta 在 foundational integrity 上投入了。关键是看这些获奖项目具体做了什么，有没有可以借鉴的思路。你可以去 Meta Research 官网看看详细的获奖名单和项目介绍，说不定有新灵感！</div>
+</div>
+</section>
+
+        <footer class="footer">
+            <p>Ada AI 日报 · 为 Builder 精选的 AI 资讯</p>
+            <p style="margin-top: 8px;">由 Gemini API 驱动 · 灵感来自 Zara Zhang</p>
+            <nav class="nav">
+                <a href="./index.html">📋 目录</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
